@@ -37,25 +37,47 @@
 
 //Task 3: Functions with Conditional Logic
 
-function checkEligibility(age, isEmployed){
+// function checkEligibility(age, isEmployed){
     
-    if(typeof age !=="number" || typeof isEmployed !== "boolean" || isNaN(age)||age<0 ){
-        return "Invalid input"
+//     if(typeof age !=="number" || typeof isEmployed !== "boolean" || isNaN(age)||age<0 ){
+//         return "Invalid input"
+//     }
+
+    
+//     if (age> 18 && isEmployed){
+//         return "You are eligible";
+//     }else if (age >18 && !isEmployed){
+//         return "you ar conditionally eligible.";
+//     }else{
+//         return "You are not eligible";
+//     }
+
+// }
+// console.log("\nTask 3:");
+// console.log(checkEligibility(20, true)); // Output: You are eligible.
+// console.log(checkEligibility(19, false));// Output: you are conditionally eligible.
+// console.log(checkEligibility(17, true));// Output: you not eligible
+// console.log(checkEligibility("20", false)); // Output: Invalid input
+
+// Task 4: Refactoring for Reusability
+
+function calculateTotalCost(price, quantity, taxRate, discount=0){
+    if (typeof price!=="number" ||typeof quantity!=="number"|| typeof taxRate!=="number" || typeof discount!=="number"|| isNaN(price) || isNaN(quantity) || isNaN(taxRate) || isNaN(discount) || price <0 || quantity <0||taxRate<0||discount<0){
+        return "Invalid input";
     }
 
-    
-    if (age> 18 && isEmployed){
-        return "You are eligible";
-    }else if (age >18 && !isEmployed){
-        return "you ar conditionally eligible.";
-    }else{
-        return "You are not eligible";
+    let total = price *quantity
+    let discountedTotal = total - discount
+    if (discountedTotal <0){
+        return "Invalid input: Discount exceeds subtotal";
+    }
+    let totalCost = discountedTotal * (1+taxRate)
+    return totalCost;
     }
 
-}
-console.log("\nTask 3:");
-console.log(checkEligibility(20, true)); // Output: You are eligible.
-console.log(checkEligibility(19, false));// Output: you are conditionally eligible.
-console.log(checkEligibility(17, true));// Output: you not eligible
-console.log(checkEligibility("20", false)); // Output: Invalid input
-
+console.log("\nTask 4: ");
+console.log(calculateTotalCost(10, 2, 0.1)); 
+console.log(calculateTotalCost(10, 2, 0.1, 5)); 
+console.log(calculateTotalCost(5.99, 3, 0.08, 2)); 
+console.log(calculateTotalCost(10, 2, 0.1, "6")); 
+console.log(calculateTotalCost(10, 2, 0.1, 25)); 
