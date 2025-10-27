@@ -23,13 +23,39 @@
 
 // Task 2: Mathematical Operations with Multiple Parameters
 
-function calculateTotalCost(price, quantity, taxRate){
-    // check if inputs are valid numbers
-    //The isNaN() method converts the value to a number before testing it.
-    if (isNaN(price)|| isNaN(quantity)|| isNaN(taxRate)){
+// function calculateTotalCost(price, quantity, taxRate){
+//     // check if inputs are valid numbers
+//     //The isNaN() method converts the value to a number before testing it.
+//     if (isNaN(price)|| isNaN(quantity)|| isNaN(taxRate)){
+//     }
+//     let totalCost =(price*quantity)*(1+taxRate);
+//     return totalCost;
+// }
+//     console.log("\nTask 2:");
+//     console.log(calculateTotalCost(10, 3, 0.04));
+//     console.log(calculateTotalCost("abc", 3, 0.04));
+
+//Task 3: Functions with Conditional Logic
+
+function checkEligibility(age, isEmployed){
+    
+    if(typeof age !=="number" || typeof isEmployed !== "boolean" || isNaN(age)||age<0 ){
+        return "Invalid input"
     }
-    let totalCost =(price*quantity)*(1+taxRate);
-    return totalCost;
+
+    
+    if (age> 18 && isEmployed){
+        return "You are eligible";
+    }else if (age >18 && !isEmployed){
+        return "you ar conditionally eligible.";
+    }else{
+        return "You are not eligible";
+    }
+
 }
-    console.log(calculateTotalCost(10, 3, 0.04));
-    console.log(calculateTotalCost("abc", 3, 0.04));
+console.log("\nTask 3:");
+console.log(checkEligibility(20, true)); // Output: You are eligible.
+console.log(checkEligibility(19, false));// Output: you are conditionally eligible.
+console.log(checkEligibility(17, true));// Output: you not eligible
+console.log(checkEligibility("20", false)); // Output: Invalid input
+
