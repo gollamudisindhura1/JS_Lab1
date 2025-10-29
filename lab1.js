@@ -1,4 +1,4 @@
-// //Task 1: Flexible String Manipulation with Functions
+// --------Task 1: Flexible String Manipulation with Functions-----------------
 
 // function formatFullName(firstName, lastName){
 //     // Here I am checking if either input is not a string and if input is missing.
@@ -8,7 +8,7 @@
 //     // The typeof operator returns a string indicating the type of the operand's value.
 
 
-// // Capitalize the first leeter of each name 
+// Capitalize the first leeter of each name
 
 // let formattedFisrtName = firstName.charAt(0).toUpperCase()+ firstName.slice(1).toLowerCase();
 // let formattedLastName = lastName.charAt(0).toUpperCase()+ lastName.slice(1).toLowerCase();
@@ -21,7 +21,7 @@
 // console.log(formatFullName("Sindhu", "")); // Output Invalid
 // console.log(formatFullName("sindhu", null)); // Output Invalid
 
-// Task 2: Mathematical Operations with Multiple Parameters
+// -------------------------------Task 2: Mathematical Operations with Multiple Parameters-------------------------------------------
 
 // function calculateTotalCost(price, quantity, taxRate){
 //     // check if inputs are valid numbers
@@ -35,7 +35,7 @@
 //     console.log(calculateTotalCost(10, 3, 0.04));
 //     console.log(calculateTotalCost("abc", 3, 0.04));
 
-//Task 3: Functions with Conditional Logic
+//-----------------------------Task 3: Functions with Conditional Logic-------------------------------------------------------
 
 // function checkEligibility(age, isEmployed){
     
@@ -59,7 +59,7 @@
 // console.log(checkEligibility(17, true));// Output: you not eligible
 // console.log(checkEligibility("20", false)); // Output: Invalid input
 
-// Task 4: Refactoring for Reusability
+// ---------------------------------------Task 4: Refactoring for Reusability---------------------------------------------------------
 
 function calculateTotalCost(price, quantity, taxRate, discount=0){
     if (typeof price!=="number" ||typeof quantity!=="number"|| typeof taxRate!=="number" || typeof discount!=="number"|| isNaN(price) || isNaN(quantity) || isNaN(taxRate) || isNaN(discount) || price <0 || quantity <0||taxRate<0||discount<0){
